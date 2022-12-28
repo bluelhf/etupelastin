@@ -1,1 +1,1 @@
-export let API_URL = "http://localhost:8002";
+export let API_URL = "https://takapelastin.lhf.blue/";
