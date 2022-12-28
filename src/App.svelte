@@ -2,7 +2,7 @@
     import Violations from './lib/violations/Violations.svelte';
     import Tracker from './lib/tracker/Tracker.svelte';
 
-    import { API_URL } from './lib/configuration.js';
+    import { API_URL } from './configuration.js';
     import { Updater } from './lib/updater';
 
     let updater = new Updater(API_URL,
