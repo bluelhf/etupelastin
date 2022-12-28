@@ -2,8 +2,6 @@
     import { METRES } from '../constants.json';
 
     import { getRelativeTime } from '../time.js';
-    import { fadeFly } from '../transitions';
-    import { cubicInOut } from 'svelte/easing';
 
     export let captureTick;
     export let captureTimestamp;
@@ -19,21 +17,22 @@
     $: closestDistanceMetres = `${Math.round(closestDistance / METRES)} metres`;
 </script>
 
-<div id="card" in:fadeFly={{ y: 200, duration: 1000, easing: cubicInOut }} style="--colour: {colour}">
-    <h5 id="name">{pilot.firstName} {pilot.lastName}</h5>
+<div id="card" style="--colour: {colour}">
+    <h5 class="text" id="name">{pilot.firstName} {pilot.lastName}</h5>
     <div id="information">
-        <p id="violationTime">{relativeTime}</p>
+        <p class="text" id="violationTime">{relativeTime}</p>
         <ul id="details">
-            <li>Closest distance: {closestDistanceMetres}</li>
-            <li><a href="mailto:{pilot.email}">{pilot.email}</a></li>
-            <li><a href="tel:{pilot.phoneNumber}">{pilot.phoneNumber}</a></li>
+            <li class="text">Closest distance: {closestDistanceMetres}</li>
+            <li><a class="text" href="mailto:{pilot.email}">{pilot.email}</a></li>
+            <li><a class="text" href="tel:{pilot.phoneNumber}">{pilot.phoneNumber}</a></li>
         </ul>
     </div>
 </div>
 
 <style>
-    #card * {
+    .text {
         color: var(--colour);
+        transition: color 0.5s ease-in-out 0s;
     }
 
     #name {
@@ -60,7 +59,7 @@
     }
 
     a, a:link, a:visited, a:hover, a:active {
-        text-decoration-color: #00000033;
+        text-decoration: none;
     }
 
     #card {

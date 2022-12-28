@@ -56,7 +56,7 @@
 
         transform: translate(var(--offset), var(--offset));
 
-        background-color: #22000022;
+        background-color: #44000033;
     }
 
     #container {

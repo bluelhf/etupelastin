@@ -1,11 +1,20 @@
 <script>
+    import { flip } from 'svelte/animate';
+    import { fadeFly } from '../transitions';
+    import { cubicInOut } from 'svelte/easing';
+
     import Violation from './Violation.svelte'
 
     export let violations
     export let timestamp
     export let tick
 
-    $: violations?.sort((a, b) => b.tick - a.tick)
+
+    $: violations?.sort((a, b) => {
+        let byTime = b.tick - a.tick;
+        if (byTime === 0) return a.closestDistance - b.closestDistance;
+        return byTime;
+    });
 </script>
 
 <div id="container">
@@ -17,7 +26,8 @@
         {#if violations}
             <ul>
                 {#each violations as violation (violation.pilot.pilotId)}
-                    <li>
+                    <li animate:flip={{duration: 1000}}
+                        in:fadeFly={{ y: 200, duration: 1000, easing: cubicInOut }}>
                         <Violation {...violation}
                                    captureTimestamp={timestamp}
                                    captureTick={tick} />
