@@ -8,6 +8,6 @@ also the front-end framework I'm most comfortable with. That being said, I'm not
 intimately familiar with any front-end development: It's something I've only dabbled in.
 
 Etupelastin is the less interesting part of the project: it just displays JSON data
-from the [back-end server that actually solves the assignment](https://github.com/Takapelastin). That being said, it does
+from the [back-end server that actually solves the assignment](https://github.com/bluelhf/Takapelastin). That being said, it does
 have some cool features, and it's still worth checking out :)
 
