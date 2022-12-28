@@ -39,6 +39,9 @@
     }
 
     .no-drone-zone {
+        z-index: 999;
+        background-blend-mode: exclusion;
+
         /* Radius of no-drone-zone in API units */
         --radius: calc(100 * var(--METRES));
 
@@ -46,7 +49,7 @@
         --diameter: calc(2 * var(--radius));
 
         /* Diameter of no-drone-zone relative to the tracker size (in root ems) */
-        --relative-diameter: calc(var(--diameter) / 500000 * var(--size) - var(--drone-diameter) / 2);
+        --relative-diameter: calc(var(--diameter) / 500000 * var(--size) - var(--drone-diameter) / 4);
 
         /* Offset of no-drone-zone's top-left corner from top-left of tracker (in root ems) */
         --offset: calc((var(--size) - var(--relative-diameter)) / 2);
@@ -56,12 +59,13 @@
 
         transform: translate(var(--offset), var(--offset));
 
-        background-color: #44000033;
+        background-color: #ff0000;
+        opacity: 0.1;
     }
 
     #container {
         position: static;
-        background-color: #00000011;
+        background-color: #00000022;
         width: var(--size);
         height: var(--size);
         

@@ -38,13 +38,15 @@
     .drone {
         width: var(--drone-diameter);
         height: var(--drone-diameter);
-        background-color: #444444;
-        transition-property: transform;
+        background-color: #ffffffff;
+        transition-property: background-color, transform, opacity;
         transition-duration: 0.5s;
+
+        opacity: 0.5;
     }
 
     .violating {
-        background-color: red !important;
+        background-color: red;
     }
 
     .hoverText {

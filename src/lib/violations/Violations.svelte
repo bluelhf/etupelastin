@@ -64,7 +64,7 @@
     }
 
     .subheading {
-        filter: opacity(0.2);
+        opacity: 0.2;
     }
 
     #container {
@@ -75,7 +75,7 @@
         max-height: 50rem;
         height: 50rem;
 
-        background-color: #00000011;
+        background-color: #00000022;
         border-radius: 1rem;
         padding: 2rem;
     }
