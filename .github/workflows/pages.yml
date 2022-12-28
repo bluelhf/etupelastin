@@ -32,13 +32,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install CI dependencies
-        uses: anna-money/github-actions-npm@v4
-        with:
-          target: ci
+        run: npm ci
       - name: Build with Vite
-        uses: anna-money/github-actions-npm@v4
-        with:
-          target: build
+        run: npm run build
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
         with:
