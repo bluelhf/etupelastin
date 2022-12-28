@@ -8,6 +8,8 @@
     export let serialNumber
     export let tick
 
+    export let diameter
+
     $: currentlyViolating = violation?.tick === tick
     $: pilot = violation?.pilot
 
@@ -18,6 +20,7 @@
 </script>
 
 <span class="drone object {currentlyViolating ? 'violating' : ''}" style="
+    --drone-diameter: {diameter};
     transform: translate(
         calc({relativePosition.x} * var(--size)),
         calc({relativePosition.y} * var(--size)));" transition:fade>
@@ -33,8 +36,8 @@
 </span>
 <style>
     .drone {
-        width: 2rem;
-        height: 2rem;
+        width: var(--drone-diameter);
+        height: var(--drone-diameter);
         background-color: #444444;
         transition-property: transform;
         transition-duration: 0.5s;

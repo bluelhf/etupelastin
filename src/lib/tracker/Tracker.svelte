@@ -7,16 +7,18 @@
     export let     drones = [];
     export let       tick = 0;
 
+    export let droneDiameter = "2rem";
+
     const findViolation = memoize((drone) =>
         violations.find(violation => violation.droneSerialNumber === drone.serialNumber));
 
 </script>
-<div id="container" style="--METRES: {METRES}">
+<div id="container" style="--METRES: {METRES}; --drone-diameter: {droneDiameter}">
     <span class="no-drone-zone object"></span>
     {#each drones as drone (drone.serialNumber)}
         <Drone {...drone}
                violation={findViolation(drone)}
-               tick={tick} />
+               tick={tick} diameter={droneDiameter}/>
     {/each}
 </div>
 
@@ -44,7 +46,7 @@
         --diameter: calc(2 * var(--radius));
 
         /* Diameter of no-drone-zone relative to the tracker size (in root ems) */
-        --relative-diameter: calc(var(--diameter) / 500000 * var(--size));
+        --relative-diameter: calc(var(--diameter) / 500000 * var(--size) - var(--drone-diameter) / 2);
 
         /* Offset of no-drone-zone's top-left corner from top-left of tracker (in root ems) */
         --offset: calc((var(--size) - var(--relative-diameter)) / 2);
