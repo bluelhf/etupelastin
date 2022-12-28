@@ -1,4 +1,8 @@
 :root {
+    font-family: 'Rubik', system-ui, sans-serif;
+}
+
+:root {
     --background: #131516;
     --text-colour: white;
 }
@@ -9,11 +13,4 @@ html {
 
 * {
     color: var(--text-colour);
-}
-
-@media only screen and (prefers-color-scheme: light) {
-    :root {
-        --background: white;
-        --text-colour: #131516;
-    }
 }
