@@ -1,6 +1,6 @@
 # Etupelastin
 
-<img align="right" width="30%" src="public/loon.svg" alt="Loon.">
+<img align="right" width="30%" src="src/loon.svg" alt="Loon.">
 
 Etupelastin is the Vite + Svelte front-end for my solution to Reaktor's [PROJECT BIRDNEST](https://assignments.reaktor.com/birdnest/)
 assignment. Svelte was chosen because it's very simple and performant, and it's

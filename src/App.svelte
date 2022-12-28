@@ -2,6 +2,8 @@
     import Violations from './lib/violations/Violations.svelte';
     import Tracker from './lib/tracker/Tracker.svelte';
 
+    import logoUrl from './loon.svg';
+
     import { API_URL } from './configuration.js';
     import { Updater } from './lib/updater';
 
@@ -18,7 +20,7 @@
 <div id="container">
     <h1 id="header">
         <svg id="logo" viewBox="0 0 284.73 227.31">
-            <use href="/loon.svg#img" xlink:href='/loon.svg#img'></use>
+            <use href="{logoUrl}#img" xlink:href='{logoUrl}#img'></use>
         </svg>
         Kuikanpelastin
     </h1>
